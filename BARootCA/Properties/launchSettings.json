@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BABootstrap": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\WinBox.exe"
+    }
+  }
+}

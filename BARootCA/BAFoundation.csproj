@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PublishAot>true</PublishAot>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>true</PublishTrimmed>
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<Company>below average</Company>
+		<Product>$(Company) Foundation</Product>
+		<Copyright>$(Company) (C) $([System.DateTime]::Now.Year)</Copyright>
+		<Description>Verifies software authenticity and establishes platform trust.</Description>
+		<Version>$([System.DateTime]::Now.ToString("yyyy.M.d.Hm"))</Version>
+		<FileVersion>$(Version)</FileVersion>
+		<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="below-average-Root-CA.crt" />
+	</ItemGroup>
+</Project>
