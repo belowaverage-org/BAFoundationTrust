@@ -77,20 +77,23 @@ namespace BAFoundationTrust {
             if (!chain.Build(signatureCert)) return 1002;
             if (!chain.ChainElements[^1].Certificate.RawData.SequenceEqual(rootCACert.RawData)) return 1003;
 
-            ProcessStartInfo psi = new()
+            if (!Arguments.Contains("/VerifyIntegrityOnly"))
             {
-                FileName = Arguments[0],
-                Arguments = string.Join(' ', Arguments[1..]),
-                WorkingDirectory = Environment.CurrentDirectory,
-                UseShellExecute = true
-            };
-            try
-            {
-                Process.Start(psi);
-            }
-            catch
-            {
-                return 1004;
+                ProcessStartInfo psi = new()
+                {
+                    FileName = Arguments[0],
+                    Arguments = string.Join(' ', Arguments[1..]),
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    UseShellExecute = true
+                };
+                try
+                {
+                    Process.Start(psi);
+                }
+                catch
+                {
+                    return 1004;
+                }
             }
 
             return 0;
