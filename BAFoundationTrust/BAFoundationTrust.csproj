@@ -19,6 +19,17 @@
 		<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 		<NoWin32Manifest>true</NoWin32Manifest>
 		<ApplicationIcon>icon.ico</ApplicationIcon>
+		<AssemblyTitle>$(Description)</AssemblyTitle>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<Title>$(Company) Foundation Trust</Title>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>none</DebugType>
+	  <Deterministic>False</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>none</DebugType>
+	  <Deterministic>False</Deterministic>
 	</PropertyGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="below-average-Root-CA.crt" />
